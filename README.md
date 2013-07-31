@@ -81,23 +81,6 @@ In your class's header:
 ```
 
 
-In your class's `-init` method, before doing anything else:
-
-```objective-c
-self = [super init];
-if (self)
-{
-    // the queueCritical property has to be named as such right now... i'll fix this eventually, maybe.
-    // also, you should definitely use a SERIAL queue, but if you're feeling ridiculous, you can always
-    // give CONCURRENT a shot as well.
-
-    @gcd_threadsafe_init( self.queueCritical, SERIAL, "com.pton.queueCritical" );
-
-    // ...
-}
-```
-
-
 
 And to perform **critical writes** in your code:
 
@@ -131,10 +114,33 @@ NSLog( @"synchronizedValue = %@", synchronizedValue );
 
 
 
-... the framework will (should? ... might???) line everything up as it oughta be.  This is an alpha release, to be
+That's all there is to it, really.  The framework will (should? ... might???) line everything up as it oughta be.  This is an alpha release, to be
 sure, so I'd very much welcome any traffic that would like to make its way into the issue queue.
 
 Then again, if I have the balls to throw alpha code into production apps, shouldn't you?
+
+
+
+# custom queues
+
+If you're a fool and want to initialize your queue with non-standard characteristics (i.e., giving it a custom name or making it concurrent), you can do so in your class's `-init` method, before doing anything else:
+
+```objective-c
+self = [super init];
+if (self)
+{
+    // the queueCritical property has to be named as such right now... i'll fix this eventually, maybe.
+    // also, you should definitely use a SERIAL queue, but if you're feeling ridiculous, you can always
+    // give CONCURRENT a shot as well.
+
+    @gcd_threadsafe_init( self.queueCritical, SERIAL, "com.pton.queueCritical" );
+
+    // ...
+}
+```
+
+([libextobjc](http://github.com/jspahrsummers/libextobjc)'s concrete protocols are fkn sick, rite???)
+
 
 
 
