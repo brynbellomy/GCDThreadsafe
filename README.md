@@ -1,6 +1,8 @@
 
 # // gcd threadsafe'ing
 
+[![Build Status](https://travis-ci.org/brynbellomy/GCDThreadsafe.png)](https://travis-ci.org/brynbellomy/GCDThreadsafe)
+
 The main idea with this thing is to make it feel extremely familiar to implement.  It more or less looks and acts like an old-school Objective-C `@synchronized` block.
 
 *Note: like plenty of other folks these days, I'm interested in forcefully phasing out `@synchronized` -- it's some slow ass grandma shit and has no place in the future next to the flying cars.*
