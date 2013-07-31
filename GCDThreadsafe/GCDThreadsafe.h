@@ -181,7 +181,7 @@ void BKDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __attr
 \
         - (TYPE) PROPERTY \
         { \
-            __block TYPE instance = nil; \
+            __block TYPE instance; \
 \
             [self runCriticalReadSection:^{ \
                 instance = metamacro_concat(_,PROPERTY); \
@@ -215,7 +215,7 @@ void BKDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __attr
 \
             [self runCriticalMutableSection:^{ \
                 @strongify(self); \
-                yssert_notNil( self ); \
+                assert( self != nil ); \
 \
                 metamacro_concat(_,PROPERTY) = obj; \
             }]; \

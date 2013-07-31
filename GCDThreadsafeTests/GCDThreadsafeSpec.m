@@ -50,21 +50,18 @@
     }];
 }
 
-- (void) setCounter:(NSUInteger)counter
-{
-    [self runCriticalMutableSection:^{
-        _counter = counter;
-    }];
-}
+@gcd_threadsafe_implementSetter( NSUInteger, counter, setCounter: )
+@gcd_threadsafe_implementGetter_assign( NSUInteger, counter )
 
-- (NSUInteger) counter
-{
-    __block NSUInteger theValue = 0;
-    [self runCriticalReadSection:^{
-        theValue = _counter;
-    }];
-    return theValue;
-}
+
+//- (NSUInteger) counter
+//{
+//    __block NSUInteger theValue = 0;
+//    [self runCriticalReadSection:^{
+//        theValue = _counter;
+//    }];
+//    return theValue;
+//}
 
 @end
 
@@ -94,18 +91,10 @@ context(@"An object implementing GCDThreadsafe", ^{
 
         it(@"should run critical read section blocks on its self.queueCritical queue", ^{
 
-            [testObj runCriticalReadSection:^{
-                BOOL is = BKCurrentQueueIs(testObj.queueCritical);
-                [[theValue(is) should] beYes];
-
-                is = BKCurrentQueueIs(dispatch_get_main_queue());
-                [[theValue(is) should] beNo];
+            [testObj runTestingBlockAsCriticalReadSection:^{
+                [[theValue(BKCurrentQueueIs(testObj.queueCritical))     should] beYes];
+                [[theValue(BKCurrentQueueIs(dispatch_get_main_queue())) should] beNo];
             }];
-
-//            [testObj runTestingBlockAsCriticalReadSection:^{
-//                [[theValue(BKCurrentQueueIs(testObj.queueCritical))     should] beYes];
-//                [[theValue(BKCurrentQueueIs(dispatch_get_main_queue())) should] beNo];
-//            }];
 
         });
 
@@ -156,7 +145,7 @@ context(@"An object implementing GCDThreadsafe", ^{
 
             // wait for async tests to catch up
             // @@TODO: come on bro do this better
-            [testObj runCriticalReadSection:^{}];
+            [testObj runTestingBlockAsCriticalReadSection:^{}];
         });
     });
     

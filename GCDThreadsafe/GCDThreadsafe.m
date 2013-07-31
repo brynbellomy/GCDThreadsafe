@@ -56,6 +56,8 @@ void BKInitializeQueue( dispatch_queue_t queue )
 
 BOOL BKCurrentQueueIs( dispatch_queue_t otherQueue )
 {
+    assert( otherQueue != NULL );
+
     void *uuidOther = BKQueueEnsureQueueHasUUID( otherQueue );
     void *uuidMine  = BKQueueGetCurrentQueueUUID();
 
@@ -75,7 +77,7 @@ BOOL BKCurrentQueueIs( dispatch_queue_t otherQueue )
 
 void *BKQueueUUIDCreate()
 {
-    void *uuid = calloc(1, 1);
+    void *uuid = calloc( 1, 1 );
     assert( uuid != NULL );
 
     return uuid;
@@ -151,10 +153,13 @@ void *BKQueueGetCurrentQueueUUID()
     dispatch_queue_t queueCritical = BKCastObjectPointerToDispatchObject( dispatch_queue_t, pointerToQueue );
 
     // auto-initialize the queue as a serial queue with a default label "{CLASS}.queueCritical"
-    if ( !queueCritical )
+    if ( queueCritical == NULL )
     {
         NSString *label = [NSString stringWithFormat:@"%@.queueCritical", NSStringFromClass(self.class) ];
         @gcd_threadsafe_init( queueCritical, SERIAL, [label UTF8String] );
+
+        self.queueCritical = queueCritical;
+
     }
 
     return queueCritical;
@@ -167,7 +172,7 @@ void *BKQueueGetCurrentQueueUUID()
     objc_setAssociatedObject( self,
                               GCDThreadsafeAssociatedObject_CriticalQueue,
                               BKCastObjectPointerToDispatchObject(id, queueCritical),
-                              OBJC_ASSOCIATION_RETAIN_NONATOMIC );
+                              OBJC_ASSOCIATION_RETAIN );
 }
 
 
