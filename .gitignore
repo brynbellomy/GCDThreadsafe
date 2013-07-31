@@ -8,8 +8,6 @@ build/*
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-*.xcworkspace
-!default.xcworkspace
 xcuserdata
 profile
 *.moved-aside
@@ -18,3 +16,7 @@ profile
 *.sublime-workspace
 
 .DS_Store
+
+# commenting out the ignorification of workspaces so that travis-ci can build + test
+#*.xcworkspace
+#!default.xcworkspace
