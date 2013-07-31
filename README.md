@@ -3,9 +3,9 @@
 
 [![Build Status](https://travis-ci.org/brynbellomy/GCDThreadsafe.png)](https://travis-ci.org/brynbellomy/GCDThreadsafe)
 
-The main idea with this thing is to make it feel extremely familiar to implement.  It more or less looks and acts like an old-school Objective-C `@synchronized` block.
+The main idea with this thing is to make it feel extremely familiar to implement.  The conventions herein should look and feel like old-school Objective-C `@synchronized` blocks and `@property (atomic)` declarations.
 
-*Note: like plenty of other folks these days, I'm interested in forcefully phasing out `@synchronized` -- it's some slow ass grandma shit and has no place in the future next to the flying cars.*
+*Note: like plenty of other folks these days, I'm interested in forcefully phasing out `@synchronized`/`atomic` -- it's some slow ass grandma shit and has no place in the future next to the flying cars.*
 
 You can use nearly the same patterns, the only real exception being the `@strongify(self)` and `@weakify(self)` boilerplate stuff from [libextobjc](http://github.com/jspahrsummers/libextobjc) (which simply exists to prevent block-related retain cycles).
 
@@ -26,9 +26,41 @@ It's probably a smart idea to only do what you say you're gonna do in each secti
 
 
 
+# auto-getters, auto-setters
+
+Yep, GCDThreadsafe has a few `#define`macros that automatically implement getters and setters for the properties on your threadsafe class.  It's like being able to specify `@property (atomic)`, except it's fast and doesn't suck.
+
+An example from the tests:
+
+```objective-c
+@interface ThreadsafeClass : NSObject <GCDThreadsafe>
+    @property (nonatomic, assign, readwrite) NSUInteger counter;
+@end
+
+
+@implementation ThreadsafeClass
+
+@synthesize counter = _counter;
+
+@gcd_threadsafe_implementSetter( NSUInteger, counter, setCounter: )
+@gcd_threadsafe_implementGetter_assign( NSUInteger, counter )
+
+// ...
+
+@end
+```
+
+There's also `@gcd_threadsafe_implementGetter_object()` for Objective-C objects and `@gcd_threadsafe_implementGetter_dispatch()` for GCD objects (which will automatically figure out whether GCD objects are being treated by the runtime as Objective-C objects or as old-school C pointers).
+
+
+
 # tl;dr
 
-To set up your class with this nonsense, all you have to do is declare that it conforms to the `GCDThreadsafe` protocol.  This protocol is actually defined using [libextobjc](http://github.com/jspahrsummers/libextobjc)'s magical "concrete" protocol mechanism, meaning that it automatically implements the methods it declares (unless you define your own implementation, which you shouldn't).  Ain't gotta do a thing.  It's a lot like a mixin or a class extension.
+To threadsafe your class with all of this nonsense, all you have to do is declare that it conforms to the `GCDThreadsafe` protocol.
+
+That's it.
+
+This protocol is actually defined using [libextobjc](http://github.com/jspahrsummers/libextobjc)'s magical "concrete protocol" mechanism, meaning that it automatically implements the methods it declares (unless you define your own implementation, which you shouldn't).  Ain't gotta do a thing.  It's a lot like a mixin or a class extension, but a little bit gentler (in case you do for some idiotic reason want to override my **free**, **no questions asked**, **drive it out of the lot** default implementations).
 
 So in your Podfile (you're using [CocoaPods](http://cocoapods.org), right?):
 
