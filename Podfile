@@ -1,6 +1,6 @@
 platform :ios, '6.1'
 
-pod 'libextobjc'
+pod 'libextobjc', '~> 0.2.5'
 
 target 'GCDThreadsafeTests', :exclusive => true do
     # pod 'TestPilot'

@@ -23,6 +23,8 @@ Pod::Spec.new do |s|
     # xcode 5
     s.xcconfig = { 'CLANG_ENABLE_MODULES' => 'YES' }
 
+    s.dependency 'libextobjc', '~> 0.2.5'
+
 end
 
 
