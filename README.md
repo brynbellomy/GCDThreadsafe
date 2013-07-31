@@ -85,7 +85,7 @@ And to perform **critical writes** in your code:
 __block NSString *synchronizedValue = nil;
 
 @weakify(self);
-[self runCriticalReadonlySection:^{
+[self runCriticalReadSection:^{
     @strongify(self);
     
     synchronizedValue = [_someHiddenIvar copy];
