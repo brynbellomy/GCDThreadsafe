@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     # s.platform     = :ios, '6.1'
 
     s.author       = { 'bryn austin bellomy' => 'bryn@signals.io' }
-    s.summary      = 'Easy threadsafing + the performance of Grand Central Dispatch.'
+    s.summary      = 'Easy threadsafeing + the performance of Grand Central Dispatch.'
     s.homepage     = 'http://github.com/brynbellomy/GCDThreadsafe'
     s.license      = { :type => 'WTFPL', :file => 'LICENSE.md' }
 
