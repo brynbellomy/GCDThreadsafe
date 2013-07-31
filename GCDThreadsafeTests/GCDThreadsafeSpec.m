@@ -20,12 +20,13 @@
 
 @synthesize counter = _counter;
 
+@gcd_threadsafe_implementSetter( NSUInteger, counter, setCounter: )
+@gcd_threadsafe_implementGetter_assign( NSUInteger, counter )
+
 - (instancetype) init
 {
     self = [super init];
-    if (self)
-    {
-//        @gcd_threadsafe_init( self.queueCritical, SERIAL, "BrynKit.GCDThreadsafe critical queue" );
+    if ( self ) {
     }
     return self;
 }
@@ -50,20 +51,10 @@
     }];
 }
 
-@gcd_threadsafe_implementSetter( NSUInteger, counter, setCounter: )
-@gcd_threadsafe_implementGetter_assign( NSUInteger, counter )
-
-
-//- (NSUInteger) counter
-//{
-//    __block NSUInteger theValue = 0;
-//    [self runCriticalReadSection:^{
-//        theValue = _counter;
-//    }];
-//    return theValue;
-//}
-
 @end
+
+
+
 
 SPEC_BEGIN(GCDThreadsafeSpec)
 
