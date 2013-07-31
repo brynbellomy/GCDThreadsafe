@@ -25,14 +25,20 @@
     self = [super init];
     if (self)
     {
-        @gcd_threadsafe_init( self.queueCritical, CONCURRENT, "BrynKit.GCDThreadsafe critical queue" );
+//        @gcd_threadsafe_init( self.queueCritical, SERIAL, "BrynKit.GCDThreadsafe critical queue" );
     }
     return self;
 }
 
 - (void) runTestingBlockAsCriticalMutableSection:(dispatch_block_t)block
 {
+    assert(self != nil);
+    @weakify(self);
+
     [self runCriticalMutableSection:^{
+        @strongify(self);
+        assert(self != nil);
+
         block();
     }];
 }
@@ -71,6 +77,10 @@ context(@"An object implementing GCDThreadsafe", ^{
 
         it(@"should have a non-nil queueCritical property", ^{
             [testObj.queueCritical shouldNotBeNil];
+
+            // wait for async tests to catch up
+            // @@TODO: come on bro do this better
+            [testObj runCriticalReadSection:^{}];
         });
 
         it(@"should run critical mutable section blocks on its self.queueCritical queue", ^{
@@ -84,10 +94,18 @@ context(@"An object implementing GCDThreadsafe", ^{
 
         it(@"should run critical read section blocks on its self.queueCritical queue", ^{
 
-            [testObj runTestingBlockAsCriticalReadSection:^{
-                [[theValue(BKCurrentQueueIs(testObj.queueCritical))     should] beYes];
-                [[theValue(BKCurrentQueueIs(dispatch_get_main_queue())) should] beNo];
+            [testObj runCriticalReadSection:^{
+                BOOL is = BKCurrentQueueIs(testObj.queueCritical);
+                [[theValue(is) should] beYes];
+
+                is = BKCurrentQueueIs(dispatch_get_main_queue());
+                [[theValue(is) should] beNo];
             }];
+
+//            [testObj runTestingBlockAsCriticalReadSection:^{
+//                [[theValue(BKCurrentQueueIs(testObj.queueCritical))     should] beYes];
+//                [[theValue(BKCurrentQueueIs(dispatch_get_main_queue())) should] beNo];
+//            }];
 
         });
 
@@ -129,6 +147,10 @@ context(@"An object implementing GCDThreadsafe", ^{
             [testObj runCriticalMutableSection:^{
                 testObj.counter = 9999;
             }];
+
+            // wait for async tests to catch up
+            // @@TODO: come on bro do this better
+            [testObj runCriticalReadSection:^{}];
 
             [[theValue(testObj.counter) should] equal:@9999];
 

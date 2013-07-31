@@ -45,11 +45,11 @@ void BKDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block )
 
 void BKInitializeQueue( dispatch_queue_t queue )
 {
-    bk_dispatch_retain( queue );
+    gcd_retain( queue );
     {
         BKQueueEnsureQueueHasUUID( queue );
     }
-    bk_dispatch_release( queue );
+    gcd_release( queue );
 }
 
 
@@ -76,6 +76,8 @@ BOOL BKCurrentQueueIs( dispatch_queue_t otherQueue )
 void *BKQueueUUIDCreate()
 {
     void *uuid = calloc(1, 1);
+    assert( uuid != NULL );
+
     return uuid;
 }
 
@@ -86,6 +88,7 @@ void BKQueueUUIDRelease(void *context)
     if ( context )
     {
         free( context );
+        context = NULL;
     }
 }
 
@@ -98,7 +101,7 @@ void *BKQueueEnsureQueueHasUUID( dispatch_queue_t queue )
 {
     void *uuid = BKQueueGetUUID( queue );
 
-    bk_dispatch_retain( queue );
+    gcd_retain( queue );
     {
         if ( !uuid )
         {
@@ -108,7 +111,7 @@ void *BKQueueEnsureQueueHasUUID( dispatch_queue_t queue )
             dispatch_queue_set_specific( queue, GCDThreadsafeQueueIDKey, uuid, BKQueueUUIDRelease );
         }
     }
-    bk_dispatch_release( queue );
+    gcd_release( queue );
 
     return uuid;
 }
@@ -118,11 +121,11 @@ void *BKQueueEnsureQueueHasUUID( dispatch_queue_t queue )
 void *BKQueueGetUUID( dispatch_queue_t queue )
 {
     void *uuid = NULL;
-    bk_dispatch_retain( queue );
+    gcd_retain( queue );
     {
         uuid = dispatch_queue_get_specific( queue, GCDThreadsafeQueueIDKey );
     }
-    bk_dispatch_release( queue );
+    gcd_release( queue );
     return uuid;
 }
 

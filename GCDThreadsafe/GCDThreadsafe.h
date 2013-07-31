@@ -40,27 +40,27 @@
 
 #if __has_feature(objc_arc) // ARC enabled
 
-#   define bk_dispatch_retain(q)
-#   define bk_dispatch_release(q)
+#   define gcd_retain(q)
+#   define gcd_release(q)
 
 #   if OS_OBJECT_USE_OBJC
-#       define bk_dispatch_strong                           strong
+#       define gcd_strong                                   strong
 #       define gcd_threadsafe_implementGetter_dispatch      gcd_threadsafe_implementGetter_object
 #   else
-#       define bk_dispatch_strong                           assign
+#       define gcd_strong                                   assign
 #       define gcd_threadsafe_implementGetter_dispatch      gcd_threadsafe_implementGetter_assign
 #   endif
 
 #else // non-ARC
 
-#   define bk_dispatch_retain(q)                            dispatch_retain(q)
-#   define bk_dispatch_release(q)                           dispatch_release(q)
+#   define gcd_retain(q)                                    dispatch_retain(q)
+#   define gcd_release(q)                                   dispatch_release(q)
 
 #   if OS_OBJECT_USE_OBJC
-#       define bk_dispatch_strong                           retain
+#       define gcd_strong                                   retain
 #       define gcd_threadsafe_implementGetter_dispatch      gcd_threadsafe_implementGetter_assign
 #   else
-#       define bk_dispatch_strong                           assign
+#       define gcd_strong                                   assign
 #       define gcd_threadsafe_implementGetter_dispatch      gcd_threadsafe_implementGetter_assign
 #   endif
 
@@ -126,7 +126,7 @@ void BKDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __attr
 @protocol GCDThreadsafe
 
 @concrete
-    @property (nonatomic, bk_dispatch_strong, readwrite) dispatch_queue_t queueCritical;
+    @property (nonatomic, gcd_strong, readwrite) dispatch_queue_t queueCritical;
 
     - (void) runCriticalMutableSection:(dispatch_block_t)block_mutationOperation __attribute__((nonnull (1)));
     - (void) runCriticalReadSection:(dispatch_block_t)block_readOperation __attribute__((nonnull (1)));
