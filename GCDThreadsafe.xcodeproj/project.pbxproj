@@ -17,7 +17,7 @@
 		C513BCC517B787B100646933 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C513BCB217B787B100646933 /* Foundation.framework */; };
 		C513BCC817B787B100646933 /* libGCDThreadsafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C513BCAF17B787B100646933 /* libGCDThreadsafe.a */; };
 		C513BCCE17B787B100646933 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C513BCCC17B787B100646933 /* InfoPlist.strings */; };
-		C513BCDB17B7889500646933 /* GCDThreadsafeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C513BCDA17B7889500646933 /* GCDThreadsafeSpec.m */; };
+		C513BCDB17B7889500646933 /* GCDThreadsafeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C513BCDA17B7889500646933 /* GCDThreadsafeTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		C513BCC317B787B100646933 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C513BCCB17B787B100646933 /* GCDThreadsafeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GCDThreadsafeTests-Info.plist"; sourceTree = "<group>"; };
 		C513BCCD17B787B100646933 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C513BCDA17B7889500646933 /* GCDThreadsafeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDThreadsafeSpec.m; sourceTree = "<group>"; };
+		C513BCDA17B7889500646933 /* GCDThreadsafeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDThreadsafeTests.m; sourceTree = "<group>"; };
 		CDB6B1CC041642A496790788 /* libPods-GCDThreadsafeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GCDThreadsafeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,7 +140,7 @@
 		C513BCC917B787B100646933 /* GCDThreadsafeTests */ = {
 			isa = PBXGroup;
 			children = (
-				C513BCDA17B7889500646933 /* GCDThreadsafeSpec.m */,
+				C513BCDA17B7889500646933 /* GCDThreadsafeTests.m */,
 				C513BCCA17B787B100646933 /* Supporting Files */,
 			);
 			path = GCDThreadsafeTests;
@@ -325,7 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C513BCDB17B7889500646933 /* GCDThreadsafeSpec.m in Sources */,
+				C513BCDB17B7889500646933 /* GCDThreadsafeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
