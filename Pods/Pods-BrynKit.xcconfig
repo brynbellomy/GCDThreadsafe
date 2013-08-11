@@ -1,1 +1,0 @@
-PODS_BRYNKIT_OTHER_LDFLAGS = -framework ImageIO -framework QuartzCore
