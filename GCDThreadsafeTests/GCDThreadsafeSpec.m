@@ -74,8 +74,8 @@ context(@"An object implementing GCDThreadsafe", ^{
         it(@"should run critical mutable section blocks on its self.queueCritical queue", ^{
 
             [testObj runTestingBlockAsCriticalMutableSection:^{
-                [[theValue(BKCurrentQueueIs(testObj.queueCritical))     should] beYes];
-                [[theValue(BKCurrentQueueIs(dispatch_get_main_queue())) should] beNo];
+                [[theValue(GCDCurrentQueueIs(testObj.queueCritical))     should] beYes];
+                [[theValue(GCDCurrentQueueIs(dispatch_get_main_queue())) should] beNo];
             }];
 
         });
@@ -83,8 +83,8 @@ context(@"An object implementing GCDThreadsafe", ^{
         it(@"should run critical read section blocks on its self.queueCritical queue", ^{
 
             [testObj runTestingBlockAsCriticalReadSection:^{
-                [[theValue(BKCurrentQueueIs(testObj.queueCritical))     should] beYes];
-                [[theValue(BKCurrentQueueIs(dispatch_get_main_queue())) should] beNo];
+                [[theValue(GCDCurrentQueueIs(testObj.queueCritical))     should] beYes];
+                [[theValue(GCDCurrentQueueIs(dispatch_get_main_queue())) should] beNo];
             }];
 
         });
@@ -139,8 +139,8 @@ context(@"An object implementing GCDThreadsafe", ^{
             [testObj runTestingBlockAsCriticalReadSection:^{}];
         });
     });
-    
-    
+
+
 });
 
 SPEC_END

@@ -1,6 +1,6 @@
 //
 //  GCDThreadsafe.h
-//  BrynKit
+//  GCDThreadsafe
 //
 //  Created by bryn austin bellomy on 2.23.13.
 //  Copyright (c) 2013 bryn austin bellomy.  All rights reserved.
@@ -11,7 +11,7 @@
 #import <libextobjc/EXTConcreteProtocol.h>
 
 ///**
-// * These constants indicate the desired behavior when synchronously dispatching
+// * @@TODO: These constants indicate the desired behavior when synchronously dispatching
 // * a block to a given queue and we are already within the queue.
 // *
 // * - **SEDispatchSourceDeadlockBehaviorExecute**:   do not add the block to the queue, execute inline (default)
@@ -82,17 +82,17 @@
  *
  * @param queue The dispatch queue to initialize.
  *
- * @see BKCurrentQueueIs
- * @see BKDispatchSafeSync
+ * @see GCDCurrentQueueIs
+ * @see GCDDispatchSafeSync
  */
-void BKInitializeQueue( dispatch_queue_t queue ) __attribute__((nonnull (1)));
+void GCDInitializeQueue( dispatch_queue_t queue ) __attribute__((nonnull (1)));
 
 /**
  * Returns \c YES if the current queue is the same as \c otherQueue.
  *
- * @warning The \c dispatch_queue_t passed to this function must have had \c BKInitializeQueue called on it prior to this (or any other) BrynKit/GCDThreadsafe function.
+ * @warning The \c dispatch_queue_t passed to this function must have had \c GCDInitializeQueue called on it prior to this (or any other) BrynKit/GCDThreadsafe function.
  */
-BOOL BKCurrentQueueIs( dispatch_queue_t otherQueue ) __attribute__((nonnull (1)));
+BOOL GCDCurrentQueueIs( dispatch_queue_t otherQueue ) __attribute__((nonnull (1)));
 
 /**
  * Dispatches \c block on \c queue synchronously without risking certain basic forms of queue deadlock.
@@ -102,9 +102,9 @@ BOOL BKCurrentQueueIs( dispatch_queue_t otherQueue ) __attribute__((nonnull (1))
  * @param queue The queue on which to dispatch \c block
  * @param block The block to dispatch synchronously
  *
- * @warning The \c dispatch_queue_t passed to this function must have had \c BKInitializeQueue called on it prior to this (or any other) BrynKit/GCDThreadsafe function.
+ * @warning The \c dispatch_queue_t passed to this function must have had \c GCDInitializeQueue called on it prior to this (or any other) BrynKit/GCDThreadsafe function.
  */
-void BKDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __attribute__((nonnull (1, 2)));
+void GCDDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __attribute__((nonnull (1, 2)));
 
 /** @/functiongroup */
 
@@ -146,7 +146,7 @@ void BKDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __attr
     try{}@finally{} \
     do { \
         QUEUE = dispatch_queue_create( QUEUE_LABEL, metamacro_concat( DISPATCH_QUEUE_, CONCURRENCY )); \
-        BKInitializeQueue( QUEUE ); \
+        GCDInitializeQueue( QUEUE ); \
     } while(0)
 
 
@@ -225,7 +225,7 @@ void BKDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __attr
 
 
 
-#define BKCastObjectPointerToDispatchObject( TYPE, VOID_PTR ) \
+#define GCDCastObjectPointerToDispatchObject( TYPE, VOID_PTR ) \
             ({ (OS_OBJECT_BRIDGE TYPE)(OS_OBJECT_BRIDGE void *) VOID_PTR; })
 
 

@@ -1,6 +1,6 @@
 //
 //  GCDThreadsafe.m
-//  BrynKit
+//  GCDThreadsafe
 //
 //  Created by bryn austin bellomy on 2.23.13.
 //  Copyright (c) 2013 bryn austin bellomy.  All rights reserved.
@@ -10,16 +10,16 @@
 #import "GCDThreadsafe.h"
 
 
-#define BKDefineVoidKey(key) \
+#define GCDDefineVoidKey(key) \
         static void *const key = (void *)&key
 
-BKDefineVoidKey( GCDThreadsafeQueueIDKey );
-BKDefineVoidKey( GCDThreadsafeAssociatedObject_CriticalQueue );
+GCDDefineVoidKey( GCDThreadsafeQueueIDKey );
+GCDDefineVoidKey( GCDThreadsafeAssociatedObject_CriticalQueue );
 
 
-void *BKQueueEnsureQueueHasUUID( dispatch_queue_t queue ) __attribute__(( nonnull (1) ));
-void *BKQueueGetUUID( dispatch_queue_t queue ) __attribute__(( nonnull (1) ));
-void *BKQueueGetCurrentQueueUUID();
+void *GCDQueueEnsureQueueHasUUID( dispatch_queue_t queue ) __attribute__(( nonnull (1) ));
+void *GCDQueueGetUUID( dispatch_queue_t queue ) __attribute__(( nonnull (1) ));
+void *GCDQueueGetCurrentQueueUUID();
 
 
 
@@ -31,35 +31,35 @@ void *BKQueueGetCurrentQueueUUID();
 #pragma mark- Public API
 #pragma mark-
 
-void BKDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block )
+void GCDDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block )
 {
     assert( queue != NULL );
     assert( block != NULL );
 
-    BKCurrentQueueIs( queue )
+    GCDCurrentQueueIs( queue )
         ? block()
         : dispatch_sync( queue, block );
 }
 
 
 
-void BKInitializeQueue( dispatch_queue_t queue )
+void GCDInitializeQueue( dispatch_queue_t queue )
 {
     gcd_retain( queue );
     {
-        BKQueueEnsureQueueHasUUID( queue );
+        GCDQueueEnsureQueueHasUUID( queue );
     }
     gcd_release( queue );
 }
 
 
 
-BOOL BKCurrentQueueIs( dispatch_queue_t otherQueue )
+BOOL GCDCurrentQueueIs( dispatch_queue_t otherQueue )
 {
     assert( otherQueue != NULL );
 
-    void *uuidOther = BKQueueEnsureQueueHasUUID( otherQueue );
-    void *uuidMine  = BKQueueGetCurrentQueueUUID();
+    void *uuidOther = GCDQueueEnsureQueueHasUUID( otherQueue );
+    void *uuidMine  = GCDQueueGetCurrentQueueUUID();
 
     assert( uuidOther != NULL );
 
@@ -75,7 +75,7 @@ BOOL BKCurrentQueueIs( dispatch_queue_t otherQueue )
 #pragma mark- Private helper functions
 #pragma mark-
 
-void *BKQueueUUIDCreate()
+void *GCDQueueUUIDCreate()
 {
     void *uuid = calloc( 1, 1 );
     assert( uuid != NULL );
@@ -85,7 +85,7 @@ void *BKQueueUUIDCreate()
 
 
 
-void BKQueueUUIDRelease(void *context)
+void GCDQueueUUIDRelease(void *context)
 {
     if ( context )
     {
@@ -99,18 +99,18 @@ void BKQueueUUIDRelease(void *context)
 /**
  * Ensures that \c queue has a UUID string identifier (for distinguishing it from other queues).
  */
-void *BKQueueEnsureQueueHasUUID( dispatch_queue_t queue )
+void *GCDQueueEnsureQueueHasUUID( dispatch_queue_t queue )
 {
-    void *uuid = BKQueueGetUUID( queue );
+    void *uuid = GCDQueueGetUUID( queue );
 
     gcd_retain( queue );
     {
         if ( !uuid )
         {
-            uuid = BKQueueUUIDCreate();
+            uuid = GCDQueueUUIDCreate();
             assert( uuid != NULL );
             
-            dispatch_queue_set_specific( queue, GCDThreadsafeQueueIDKey, uuid, BKQueueUUIDRelease );
+            dispatch_queue_set_specific( queue, GCDThreadsafeQueueIDKey, uuid, GCDQueueUUIDRelease );
         }
     }
     gcd_release( queue );
@@ -120,7 +120,7 @@ void *BKQueueEnsureQueueHasUUID( dispatch_queue_t queue )
 
 
 
-void *BKQueueGetUUID( dispatch_queue_t queue )
+void *GCDQueueGetUUID( dispatch_queue_t queue )
 {
     void *uuid = NULL;
     gcd_retain( queue );
@@ -133,7 +133,7 @@ void *BKQueueGetUUID( dispatch_queue_t queue )
 
 
 
-void *BKQueueGetCurrentQueueUUID()
+void *GCDQueueGetCurrentQueueUUID()
 {
     void *uuid  = dispatch_get_specific( GCDThreadsafeQueueIDKey );
     return uuid;
@@ -150,7 +150,7 @@ void *BKQueueGetCurrentQueueUUID()
 - (dispatch_queue_t) queueCritical
 {
     id pointerToQueue              = objc_getAssociatedObject( self, GCDThreadsafeAssociatedObject_CriticalQueue );
-    dispatch_queue_t queueCritical = BKCastObjectPointerToDispatchObject( dispatch_queue_t, pointerToQueue );
+    dispatch_queue_t queueCritical = GCDCastObjectPointerToDispatchObject( dispatch_queue_t, pointerToQueue );
 
     // auto-initialize the queue as a serial queue with a default label "{CLASS}.queueCritical"
     if ( queueCritical == NULL )
@@ -171,7 +171,7 @@ void *BKQueueGetCurrentQueueUUID()
 {
     objc_setAssociatedObject( self,
                               GCDThreadsafeAssociatedObject_CriticalQueue,
-                              BKCastObjectPointerToDispatchObject(id, queueCritical),
+                              GCDCastObjectPointerToDispatchObject(id, queueCritical),
                               OBJC_ASSOCIATION_RETAIN );
 }
 
@@ -181,7 +181,7 @@ void *BKQueueGetCurrentQueueUUID()
 {
     assert( self.queueCritical != nil );
 
-    if ( BKCurrentQueueIs( self.queueCritical ) ) {
+    if ( GCDCurrentQueueIs( self.queueCritical ) ) {
         block_mutationOperation();
     }
     else {
@@ -195,11 +195,11 @@ void *BKQueueGetCurrentQueueUUID()
 {
     assert( self.queueCritical != nil );
 
-    if ( BKCurrentQueueIs( self.queueCritical ) ) {
+    if ( GCDCurrentQueueIs( self.queueCritical ) ) {
         block_readOperation();
     }
     else {
-        BKDispatchSafeSync( self.queueCritical, block_readOperation );
+        GCDDispatchSafeSync( self.queueCritical, block_readOperation );
     }
 }
 
