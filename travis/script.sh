@@ -1,5 +1,6 @@
 #!/bin/sh
-set -e
+
+#set -e
 
 WORKSPACE_FILENAME=./GCDThreadsafe.xcworkspace
 SCHEME_NAME=GCDThreadsafe
