@@ -88,7 +88,7 @@ PODS:
 
 DEPENDENCIES:
   - Kiwi
-  - libextobjc
+  - libextobjc (~> 0.2.5)
 
 SPEC CHECKSUMS:
   Kiwi: db174bba4ee8068b15d7122f1b22fb64b7c1d378
