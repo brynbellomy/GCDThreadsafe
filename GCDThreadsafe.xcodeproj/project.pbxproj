@@ -7,150 +7,150 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38182A6CB1A94499A705EE28 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B61266427E714258B8C040B5 /* libPods.a */; };
-		C5DA5FB017A794CA00857044 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DA5FAF17A794CA00857044 /* Foundation.framework */; };
-		C5DA5FB517A794CA00857044 /* GCDThreadsafe.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C5DA5FB417A794CA00857044 /* GCDThreadsafe.h */; };
-		C5DA5FB717A794CA00857044 /* GCDThreadsafe.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5FB617A794CA00857044 /* GCDThreadsafe.m */; };
-		C5DA5FBF17A794CB00857044 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DA5FBE17A794CB00857044 /* SenTestingKit.framework */; };
-		C5DA5FC117A794CB00857044 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DA5FC017A794CB00857044 /* UIKit.framework */; };
-		C5DA5FC217A794CB00857044 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DA5FAF17A794CA00857044 /* Foundation.framework */; };
-		C5DA5FC517A794CB00857044 /* libGCDThreadsafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5DA5FAC17A794CA00857044 /* libGCDThreadsafe.a */; };
-		C5DA5FCB17A794CB00857044 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5DA5FC917A794CB00857044 /* InfoPlist.strings */; };
-		C5DA5FD817A7975900857044 /* GCDThreadsafeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5FD717A7975900857044 /* GCDThreadsafeSpec.m */; };
-		CF75B9F66E6247C7AFBD4B70 /* libPods-GCDThreadsafeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B9F761885954E34852DE56F /* libPods-GCDThreadsafeTests.a */; };
+		2CAB1211B54D4FAF9157504D /* libPods-GCDThreadsafeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB6B1CC041642A496790788 /* libPods-GCDThreadsafeTests.a */; };
+		30D21D3744024A3A80E870F0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D25795E0F7543BD90364138 /* libPods.a */; };
+		C513BCB317B787B100646933 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C513BCB217B787B100646933 /* Foundation.framework */; };
+		C513BCB817B787B100646933 /* GCDThreadsafe.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C513BCB717B787B100646933 /* GCDThreadsafe.h */; };
+		C513BCBA17B787B100646933 /* GCDThreadsafe.m in Sources */ = {isa = PBXBuildFile; fileRef = C513BCB917B787B100646933 /* GCDThreadsafe.m */; };
+		C513BCC217B787B100646933 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C513BCC117B787B100646933 /* SenTestingKit.framework */; };
+		C513BCC417B787B100646933 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C513BCC317B787B100646933 /* UIKit.framework */; };
+		C513BCC517B787B100646933 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C513BCB217B787B100646933 /* Foundation.framework */; };
+		C513BCC817B787B100646933 /* libGCDThreadsafe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C513BCAF17B787B100646933 /* libGCDThreadsafe.a */; };
+		C513BCCE17B787B100646933 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C513BCCC17B787B100646933 /* InfoPlist.strings */; };
+		C513BCDB17B7889500646933 /* GCDThreadsafeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = C513BCDA17B7889500646933 /* GCDThreadsafeSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C5DA5FC317A794CB00857044 /* PBXContainerItemProxy */ = {
+		C513BCC617B787B100646933 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C5DA5FA417A794CA00857044 /* Project object */;
+			containerPortal = C513BCA717B787B100646933 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C5DA5FAB17A794CA00857044;
+			remoteGlobalIDString = C513BCAE17B787B100646933;
 			remoteInfo = GCDThreadsafe;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C5DA5FAA17A794CA00857044 /* CopyFiles */ = {
+		C513BCAD17B787B100646933 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				C5DA5FB517A794CA00857044 /* GCDThreadsafe.h in CopyFiles */,
+				C513BCB817B787B100646933 /* GCDThreadsafe.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4B9F761885954E34852DE56F /* libPods-GCDThreadsafeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GCDThreadsafeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E66CE8091AE46B79DBE9779 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		B61266427E714258B8C040B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5DA5FAC17A794CA00857044 /* libGCDThreadsafe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGCDThreadsafe.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5DA5FAF17A794CA00857044 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C5DA5FB317A794CA00857044 /* GCDThreadsafe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCDThreadsafe-Prefix.pch"; sourceTree = "<group>"; };
-		C5DA5FB417A794CA00857044 /* GCDThreadsafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDThreadsafe.h; sourceTree = "<group>"; };
-		C5DA5FB617A794CA00857044 /* GCDThreadsafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDThreadsafe.m; sourceTree = "<group>"; };
-		C5DA5FBD17A794CB00857044 /* GCDThreadsafeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCDThreadsafeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5DA5FBE17A794CB00857044 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C5DA5FC017A794CB00857044 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C5DA5FC817A794CB00857044 /* GCDThreadsafeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GCDThreadsafeTests-Info.plist"; sourceTree = "<group>"; };
-		C5DA5FCA17A794CB00857044 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C5DA5FD717A7975900857044 /* GCDThreadsafeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GCDThreadsafeSpec.m; path = GCDThreadsafeTests/GCDThreadsafeSpec.m; sourceTree = SOURCE_ROOT; };
-		C9E0E06EAB4641E39DE0CFC3 /* Pods-GCDThreadsafeTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCDThreadsafeTests.xcconfig"; path = "Pods/Pods-GCDThreadsafeTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		0D25795E0F7543BD90364138 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D31715BC70E43539143033A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		B96B9083715F4DC195AC9626 /* Pods-GCDThreadsafeTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCDThreadsafeTests.xcconfig"; path = "Pods/Pods-GCDThreadsafeTests.xcconfig"; sourceTree = SOURCE_ROOT; };
+		C513BCAF17B787B100646933 /* libGCDThreadsafe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGCDThreadsafe.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C513BCB217B787B100646933 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C513BCB617B787B100646933 /* GCDThreadsafe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCDThreadsafe-Prefix.pch"; sourceTree = "<group>"; };
+		C513BCB717B787B100646933 /* GCDThreadsafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDThreadsafe.h; sourceTree = "<group>"; };
+		C513BCB917B787B100646933 /* GCDThreadsafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDThreadsafe.m; sourceTree = "<group>"; };
+		C513BCC017B787B100646933 /* GCDThreadsafeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCDThreadsafeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C513BCC117B787B100646933 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C513BCC317B787B100646933 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C513BCCB17B787B100646933 /* GCDThreadsafeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GCDThreadsafeTests-Info.plist"; sourceTree = "<group>"; };
+		C513BCCD17B787B100646933 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C513BCDA17B7889500646933 /* GCDThreadsafeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDThreadsafeSpec.m; sourceTree = "<group>"; };
+		CDB6B1CC041642A496790788 /* libPods-GCDThreadsafeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GCDThreadsafeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C5DA5FA917A794CA00857044 /* Frameworks */ = {
+		C513BCAC17B787B100646933 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DA5FB017A794CA00857044 /* Foundation.framework in Frameworks */,
-				38182A6CB1A94499A705EE28 /* libPods.a in Frameworks */,
+				C513BCB317B787B100646933 /* Foundation.framework in Frameworks */,
+				30D21D3744024A3A80E870F0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5DA5FB917A794CB00857044 /* Frameworks */ = {
+		C513BCBC17B787B100646933 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DA5FBF17A794CB00857044 /* SenTestingKit.framework in Frameworks */,
-				C5DA5FC117A794CB00857044 /* UIKit.framework in Frameworks */,
-				C5DA5FC217A794CB00857044 /* Foundation.framework in Frameworks */,
-				C5DA5FC517A794CB00857044 /* libGCDThreadsafe.a in Frameworks */,
-				CF75B9F66E6247C7AFBD4B70 /* libPods-GCDThreadsafeTests.a in Frameworks */,
+				C513BCC217B787B100646933 /* SenTestingKit.framework in Frameworks */,
+				C513BCC417B787B100646933 /* UIKit.framework in Frameworks */,
+				C513BCC517B787B100646933 /* Foundation.framework in Frameworks */,
+				C513BCC817B787B100646933 /* libGCDThreadsafe.a in Frameworks */,
+				2CAB1211B54D4FAF9157504D /* libPods-GCDThreadsafeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C5DA5FA317A794CA00857044 = {
+		C513BCA617B787B100646933 = {
 			isa = PBXGroup;
 			children = (
-				C5DA5FB117A794CA00857044 /* GCDThreadsafe */,
-				C5DA5FC617A794CB00857044 /* GCDThreadsafeTests */,
-				C5DA5FAE17A794CA00857044 /* Frameworks */,
-				C5DA5FAD17A794CA00857044 /* Products */,
-				5E66CE8091AE46B79DBE9779 /* Pods.xcconfig */,
-				C9E0E06EAB4641E39DE0CFC3 /* Pods-GCDThreadsafeTests.xcconfig */,
+				C513BCB417B787B100646933 /* GCDThreadsafe */,
+				C513BCC917B787B100646933 /* GCDThreadsafeTests */,
+				C513BCB117B787B100646933 /* Frameworks */,
+				C513BCB017B787B100646933 /* Products */,
+				3D31715BC70E43539143033A /* Pods.xcconfig */,
+				B96B9083715F4DC195AC9626 /* Pods-GCDThreadsafeTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
-		C5DA5FAD17A794CA00857044 /* Products */ = {
+		C513BCB017B787B100646933 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C5DA5FAC17A794CA00857044 /* libGCDThreadsafe.a */,
-				C5DA5FBD17A794CB00857044 /* GCDThreadsafeTests.octest */,
+				C513BCAF17B787B100646933 /* libGCDThreadsafe.a */,
+				C513BCC017B787B100646933 /* GCDThreadsafeTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C5DA5FAE17A794CA00857044 /* Frameworks */ = {
+		C513BCB117B787B100646933 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C5DA5FAF17A794CA00857044 /* Foundation.framework */,
-				C5DA5FBE17A794CB00857044 /* SenTestingKit.framework */,
-				C5DA5FC017A794CB00857044 /* UIKit.framework */,
-				B61266427E714258B8C040B5 /* libPods.a */,
-				4B9F761885954E34852DE56F /* libPods-GCDThreadsafeTests.a */,
+				C513BCB217B787B100646933 /* Foundation.framework */,
+				C513BCC117B787B100646933 /* SenTestingKit.framework */,
+				C513BCC317B787B100646933 /* UIKit.framework */,
+				0D25795E0F7543BD90364138 /* libPods.a */,
+				CDB6B1CC041642A496790788 /* libPods-GCDThreadsafeTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C5DA5FB117A794CA00857044 /* GCDThreadsafe */ = {
+		C513BCB417B787B100646933 /* GCDThreadsafe */ = {
 			isa = PBXGroup;
 			children = (
-				C5DA5FB417A794CA00857044 /* GCDThreadsafe.h */,
-				C5DA5FB617A794CA00857044 /* GCDThreadsafe.m */,
-				C5DA5FB217A794CA00857044 /* Supporting Files */,
+				C513BCB717B787B100646933 /* GCDThreadsafe.h */,
+				C513BCB917B787B100646933 /* GCDThreadsafe.m */,
+				C513BCB517B787B100646933 /* Supporting Files */,
 			);
 			path = GCDThreadsafe;
 			sourceTree = "<group>";
 		};
-		C5DA5FB217A794CA00857044 /* Supporting Files */ = {
+		C513BCB517B787B100646933 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C5DA5FB317A794CA00857044 /* GCDThreadsafe-Prefix.pch */,
+				C513BCB617B787B100646933 /* GCDThreadsafe-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C5DA5FC617A794CB00857044 /* GCDThreadsafeTests */ = {
+		C513BCC917B787B100646933 /* GCDThreadsafeTests */ = {
 			isa = PBXGroup;
 			children = (
-				C5DA5FD717A7975900857044 /* GCDThreadsafeSpec.m */,
-				C5DA5FC717A794CB00857044 /* Supporting Files */,
+				C513BCDA17B7889500646933 /* GCDThreadsafeSpec.m */,
+				C513BCCA17B787B100646933 /* Supporting Files */,
 			);
 			path = GCDThreadsafeTests;
 			sourceTree = "<group>";
 		};
-		C5DA5FC717A794CB00857044 /* Supporting Files */ = {
+		C513BCCA17B787B100646933 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C5DA5FC817A794CB00857044 /* GCDThreadsafeTests-Info.plist */,
-				C5DA5FC917A794CB00857044 /* InfoPlist.strings */,
+				C513BCCB17B787B100646933 /* GCDThreadsafeTests-Info.plist */,
+				C513BCCC17B787B100646933 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,15 +158,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C5DA5FAB17A794CA00857044 /* GCDThreadsafe */ = {
+		C513BCAE17B787B100646933 /* GCDThreadsafe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C5DA5FD117A794CB00857044 /* Build configuration list for PBXNativeTarget "GCDThreadsafe" */;
+			buildConfigurationList = C513BCD417B787B100646933 /* Build configuration list for PBXNativeTarget "GCDThreadsafe" */;
 			buildPhases = (
-				53E653B7D967435383899013 /* Check Pods Manifest.lock */,
-				C5DA5FA817A794CA00857044 /* Sources */,
-				C5DA5FA917A794CA00857044 /* Frameworks */,
-				C5DA5FAA17A794CA00857044 /* CopyFiles */,
-				39F15E112F8B42E983325713 /* Copy Pods Resources */,
+				3E86891AF3DA4DA7B53F77DA /* Check Pods Manifest.lock */,
+				C513BCAB17B787B100646933 /* Sources */,
+				C513BCAC17B787B100646933 /* Frameworks */,
+				C513BCAD17B787B100646933 /* CopyFiles */,
+				946D7B47DF8A4DD58C0EE5BD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,70 +174,85 @@
 			);
 			name = GCDThreadsafe;
 			productName = GCDThreadsafe;
-			productReference = C5DA5FAC17A794CA00857044 /* libGCDThreadsafe.a */;
+			productReference = C513BCAF17B787B100646933 /* libGCDThreadsafe.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		C5DA5FBC17A794CB00857044 /* GCDThreadsafeTests */ = {
+		C513BCBF17B787B100646933 /* GCDThreadsafeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C5DA5FD417A794CB00857044 /* Build configuration list for PBXNativeTarget "GCDThreadsafeTests" */;
+			buildConfigurationList = C513BCD717B787B100646933 /* Build configuration list for PBXNativeTarget "GCDThreadsafeTests" */;
 			buildPhases = (
-				DAF3ED4AE1AB4AF789ED363A /* Check Pods Manifest.lock */,
-				C5DA5FB817A794CB00857044 /* Sources */,
-				C5DA5FB917A794CB00857044 /* Frameworks */,
-				C5DA5FBA17A794CB00857044 /* Resources */,
-				C5DA5FBB17A794CB00857044 /* ShellScript */,
-				2FD45F9AE589479EBEF3346C /* Copy Pods Resources */,
+				68CDFBE8329041EC8A8FA3DC /* Check Pods Manifest.lock */,
+				C513BCBB17B787B100646933 /* Sources */,
+				C513BCBC17B787B100646933 /* Frameworks */,
+				C513BCBD17B787B100646933 /* Resources */,
+				C513BCBE17B787B100646933 /* ShellScript */,
+				411A92754C7B4CA3A7FF1174 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C5DA5FC417A794CB00857044 /* PBXTargetDependency */,
+				C513BCC717B787B100646933 /* PBXTargetDependency */,
 			);
 			name = GCDThreadsafeTests;
 			productName = GCDThreadsafeTests;
-			productReference = C5DA5FBD17A794CB00857044 /* GCDThreadsafeTests.octest */;
+			productReference = C513BCC017B787B100646933 /* GCDThreadsafeTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C5DA5FA417A794CA00857044 /* Project object */ = {
+		C513BCA717B787B100646933 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "signalenvelope llc";
+				ORGANIZATIONNAME = "bryn austin bellomy";
 			};
-			buildConfigurationList = C5DA5FA717A794CA00857044 /* Build configuration list for PBXProject "GCDThreadsafe" */;
+			buildConfigurationList = C513BCAA17B787B100646933 /* Build configuration list for PBXProject "GCDThreadsafe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = C5DA5FA317A794CA00857044;
-			productRefGroup = C5DA5FAD17A794CA00857044 /* Products */;
+			mainGroup = C513BCA617B787B100646933;
+			productRefGroup = C513BCB017B787B100646933 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C5DA5FAB17A794CA00857044 /* GCDThreadsafe */,
-				C5DA5FBC17A794CB00857044 /* GCDThreadsafeTests */,
+				C513BCAE17B787B100646933 /* GCDThreadsafe */,
+				C513BCBF17B787B100646933 /* GCDThreadsafeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C5DA5FBA17A794CB00857044 /* Resources */ = {
+		C513BCBD17B787B100646933 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DA5FCB17A794CB00857044 /* InfoPlist.strings in Resources */,
+				C513BCCE17B787B100646933 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2FD45F9AE589479EBEF3346C /* Copy Pods Resources */ = {
+		3E86891AF3DA4DA7B53F77DA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		411A92754C7B4CA3A7FF1174 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -252,7 +267,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-GCDThreadsafeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		39F15E112F8B42E983325713 /* Copy Pods Resources */ = {
+		68CDFBE8329041EC8A8FA3DC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		946D7B47DF8A4DD58C0EE5BD /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,22 +297,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		53E653B7D967435383899013 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C5DA5FBB17A794CB00857044 /* ShellScript */ = {
+		C513BCBE17B787B100646933 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -295,55 +310,40 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-		DAF3ED4AE1AB4AF789ED363A /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C5DA5FA817A794CA00857044 /* Sources */ = {
+		C513BCAB17B787B100646933 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DA5FB717A794CA00857044 /* GCDThreadsafe.m in Sources */,
+				C513BCBA17B787B100646933 /* GCDThreadsafe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5DA5FB817A794CB00857044 /* Sources */ = {
+		C513BCBB17B787B100646933 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5DA5FD817A7975900857044 /* GCDThreadsafeSpec.m in Sources */,
+				C513BCDB17B7889500646933 /* GCDThreadsafeSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C5DA5FC417A794CB00857044 /* PBXTargetDependency */ = {
+		C513BCC717B787B100646933 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C5DA5FAB17A794CA00857044 /* GCDThreadsafe */;
-			targetProxy = C5DA5FC317A794CB00857044 /* PBXContainerItemProxy */;
+			target = C513BCAE17B787B100646933 /* GCDThreadsafe */;
+			targetProxy = C513BCC617B787B100646933 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C5DA5FC917A794CB00857044 /* InfoPlist.strings */ = {
+		C513BCCC17B787B100646933 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C5DA5FCA17A794CB00857044 /* en */,
+				C513BCCD17B787B100646933 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -351,7 +351,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C5DA5FCF17A794CB00857044 /* Debug */ = {
+		C513BCD217B787B100646933 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -381,7 +381,7 @@
 			};
 			name = Debug;
 		};
-		C5DA5FD017A794CB00857044 /* Release */ = {
+		C513BCD317B787B100646933 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -404,9 +404,9 @@
 			};
 			name = Release;
 		};
-		C5DA5FD217A794CB00857044 /* Debug */ = {
+		C513BCD517B787B100646933 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E66CE8091AE46B79DBE9779 /* Pods.xcconfig */;
+			baseConfigurationReference = 3D31715BC70E43539143033A /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/GCDThreadsafe.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -417,9 +417,9 @@
 			};
 			name = Debug;
 		};
-		C5DA5FD317A794CB00857044 /* Release */ = {
+		C513BCD617B787B100646933 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E66CE8091AE46B79DBE9779 /* Pods.xcconfig */;
+			baseConfigurationReference = 3D31715BC70E43539143033A /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/GCDThreadsafe.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -430,9 +430,9 @@
 			};
 			name = Release;
 		};
-		C5DA5FD517A794CB00857044 /* Debug */ = {
+		C513BCD817B787B100646933 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E0E06EAB4641E39DE0CFC3 /* Pods-GCDThreadsafeTests.xcconfig */;
+			baseConfigurationReference = B96B9083715F4DC195AC9626 /* Pods-GCDThreadsafeTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -446,9 +446,9 @@
 			};
 			name = Debug;
 		};
-		C5DA5FD617A794CB00857044 /* Release */ = {
+		C513BCD917B787B100646933 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9E0E06EAB4641E39DE0CFC3 /* Pods-GCDThreadsafeTests.xcconfig */;
+			baseConfigurationReference = B96B9083715F4DC195AC9626 /* Pods-GCDThreadsafeTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -465,34 +465,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C5DA5FA717A794CA00857044 /* Build configuration list for PBXProject "GCDThreadsafe" */ = {
+		C513BCAA17B787B100646933 /* Build configuration list for PBXProject "GCDThreadsafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C5DA5FCF17A794CB00857044 /* Debug */,
-				C5DA5FD017A794CB00857044 /* Release */,
+				C513BCD217B787B100646933 /* Debug */,
+				C513BCD317B787B100646933 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C5DA5FD117A794CB00857044 /* Build configuration list for PBXNativeTarget "GCDThreadsafe" */ = {
+		C513BCD417B787B100646933 /* Build configuration list for PBXNativeTarget "GCDThreadsafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C5DA5FD217A794CB00857044 /* Debug */,
-				C5DA5FD317A794CB00857044 /* Release */,
+				C513BCD517B787B100646933 /* Debug */,
+				C513BCD617B787B100646933 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C5DA5FD417A794CB00857044 /* Build configuration list for PBXNativeTarget "GCDThreadsafeTests" */ = {
+		C513BCD717B787B100646933 /* Build configuration list for PBXNativeTarget "GCDThreadsafeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C5DA5FD517A794CB00857044 /* Debug */,
-				C5DA5FD617A794CB00857044 /* Release */,
+				C513BCD817B787B100646933 /* Debug */,
+				C513BCD917B787B100646933 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C5DA5FA417A794CA00857044 /* Project object */;
+	rootObject = C513BCA717B787B100646933 /* Project object */;
 }

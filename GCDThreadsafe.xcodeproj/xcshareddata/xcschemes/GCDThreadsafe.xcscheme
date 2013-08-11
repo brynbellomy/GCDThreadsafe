@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5DA5FAB17A794CA00857044"
+               BlueprintIdentifier = "C513BCAE17B787B100646933"
                BuildableName = "libGCDThreadsafe.a"
                BlueprintName = "GCDThreadsafe"
                ReferencedContainer = "container:GCDThreadsafe.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5DA5FBC17A794CB00857044"
+               BlueprintIdentifier = "C513BCBF17B787B100646933"
                BuildableName = "GCDThreadsafeTests.octest"
                BlueprintName = "GCDThreadsafeTests"
                ReferencedContainer = "container:GCDThreadsafe.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5DA5FBC17A794CB00857044"
+               BlueprintIdentifier = "C513BCBF17B787B100646933"
                BuildableName = "GCDThreadsafeTests.octest"
                BlueprintName = "GCDThreadsafeTests"
                ReferencedContainer = "container:GCDThreadsafe.xcodeproj">
