@@ -20,6 +20,20 @@
                ReferencedContainer = "container:GCDThreadsafe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C5DA5FBC17A794CB00857044"
+               BuildableName = "GCDThreadsafeTests.octest"
+               BlueprintName = "GCDThreadsafeTests"
+               ReferencedContainer = "container:GCDThreadsafe.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
