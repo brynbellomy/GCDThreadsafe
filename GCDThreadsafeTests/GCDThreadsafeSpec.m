@@ -94,7 +94,7 @@ context(@"An object implementing GCDThreadsafe", ^{
             [[theValue(testObj.counter) should] beZero];
 
             testObj.counter++;
-            [[theValue(testObj.counter) should] equal:@100];
+            [[theValue(testObj.counter) should] equal:@1];
 
             testObj.counter++;
             testObj.counter++;
