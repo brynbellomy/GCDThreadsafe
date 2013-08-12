@@ -5,7 +5,7 @@
 
 Pod::Spec.new do |s|
     s.name         = 'GCDThreadsafe'
-    s.version      = '0.0.1'
+    s.version      = '0.1.0'
 
     s.ios.deployment_target = '6.1'
     s.osx.deployment_target = '10.8'
