@@ -106,6 +106,18 @@ BOOL GCDCurrentQueueIs( dispatch_queue_t otherQueue ) __attribute__((nonnull (1)
  */
 void GCDDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __attribute__((nonnull (1, 2)));
 
+/**
+ * Dispatches \c block on \c queue synchronously (as a barrier block) without risking certain basic forms of queue deadlock.
+ *
+ * If the current queue == \c queue, then \c block will simply be executed immediately rather than dispatched.
+ *
+ * @param queue The queue on which to dispatch \c block
+ * @param block The block to dispatch synchronously
+ *
+ * @warning The \c dispatch_queue_t passed to this function must have had \c GCDInitializeQueue called on it prior to this (or any other) BrynKit/GCDThreadsafe function.
+ */
+void GCDDispatchSafeBarrierSync( dispatch_queue_t queue, dispatch_block_t block ) __attribute__((nonnull (1, 2)));
+
 /** @/functiongroup */
 
 
@@ -159,10 +171,8 @@ void GCDDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __att
         - (TYPE) PROPERTY \
         { \
             __block TYPE instance = nil; \
-            @weakify( metamacro_concat(_,PROPERTY) ); \
 \
             [self runCriticalReadSection:^{ \
-                @strongify( metamacro_concat(_,PROPERTY) ); \
                 instance = metamacro_concat(_,PROPERTY); \
             }]; \
 \

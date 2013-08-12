@@ -68,7 +68,7 @@ context(@"An object implementing GCDThreadsafe", ^{
 
             // wait for async tests to catch up
             // @@TODO: come on bro do this better
-            [testObj runCriticalReadSection:^{}];
+//            [testObj runCriticalReadSection:^{}];
         });
 
         it(@"should run critical mutable section blocks on its self.queueCritical queue", ^{
@@ -106,7 +106,7 @@ context(@"An object implementing GCDThreadsafe", ^{
 
             // wait for async tests to catch up
             // @@TODO: come on bro do this better
-            [testObj runCriticalReadSection:^{}];
+//            [testObj runCriticalReadSection:^{}];
 
         });
 
@@ -119,7 +119,7 @@ context(@"An object implementing GCDThreadsafe", ^{
 
             // wait for async tests to catch up
             // @@TODO: come on bro do this better
-            [testObj runCriticalReadSection:^{}];
+//            [testObj runCriticalReadSection:^{}];
         });
 
         it(@"", ^{
@@ -130,13 +130,13 @@ context(@"An object implementing GCDThreadsafe", ^{
 
             // wait for async tests to catch up
             // @@TODO: come on bro do this better
-            [testObj runCriticalReadSection:^{}];
+//            [testObj runCriticalReadSection:^{}];
 
             [[theValue(testObj.counter) should] equal:@9999];
 
             // wait for async tests to catch up
             // @@TODO: come on bro do this better
-            [testObj runTestingBlockAsCriticalReadSection:^{}];
+//            [testObj runTestingBlockAsCriticalReadSection:^{}];
         });
     });
 

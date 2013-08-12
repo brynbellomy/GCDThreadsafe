@@ -43,6 +43,18 @@ void GCDDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block )
 
 
 
+void GCDDispatchSafeBarrierSync( dispatch_queue_t queue, dispatch_block_t block )
+{
+    assert( queue != NULL );
+    assert( block != NULL );
+
+    GCDCurrentQueueIs( queue )
+        ? block()
+        : dispatch_barrier_sync( queue, block );
+}
+
+
+
 void GCDInitializeQueue( dispatch_queue_t queue )
 {
     gcd_retain( queue );
@@ -195,12 +207,14 @@ void *GCDQueueGetCurrentQueueUUID()
 {
     assert( self.queueCritical != nil );
 
-    if ( GCDCurrentQueueIs( self.queueCritical ) ) {
-        block_readOperation();
-    }
-    else {
-        GCDDispatchSafeSync( self.queueCritical, block_readOperation );
-    }
+    GCDDispatchSafeBarrierSync( self.queueCritical, block_readOperation );
+
+//    if ( GCDCurrentQueueIs( self.queueCritical ) ) {
+//        block_readOperation();
+//    }
+//    else {
+//        GCDDispatchSafeBarrierSync( self.queueCritical, block_readOperation );
+//    }
 }
 
 

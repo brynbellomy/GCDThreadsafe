@@ -1,11 +1,12 @@
-#
-# GCDThreadsafe
-# CocoaPods podspec
-#
 
 Pod::Spec.new do |s|
+    #
+    # GCDThreadsafe
+    # CocoaPods podspec
+    #
+
     s.name         = 'GCDThreadsafe'
-    s.version      = '0.1.0'
+    s.version      = '0.1.1'
 
     s.ios.deployment_target = '6.1'
     s.osx.deployment_target = '10.8'
