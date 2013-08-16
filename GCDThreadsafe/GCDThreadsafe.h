@@ -125,8 +125,8 @@ void GCDDispatchSafeBarrierSync( dispatch_queue_t queue, dispatch_block_t block 
 
 
 // @@TODO: document these
-void *GCDQueueEnsureQueueHasUUID( dispatch_queue_t queue );
-void *GCDQueueGetUUID( dispatch_queue_t queue );
+void *GCDQueueEnsureQueueHasUUID( dispatch_queue_t queue ) __attribute__(( nonnull (1) ));
+void *GCDQueueGetUUID( dispatch_queue_t queue ) __attribute__(( nonnull (1) ));
 void *GCDQueueGetCurrentQueueUUID();
 
 
