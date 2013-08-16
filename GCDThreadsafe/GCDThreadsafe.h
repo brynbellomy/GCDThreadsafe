@@ -40,8 +40,8 @@
 
 #if __has_feature(objc_arc) // ARC enabled
 
-#   define gcd_retain(q)
-#   define gcd_release(q)
+#   define gcd_retain(...)
+#   define gcd_release(...)
 
 #   if OS_OBJECT_USE_OBJC
 #       define gcd_strong                                   strong
@@ -53,8 +53,8 @@
 
 #else // non-ARC
 
-#   define gcd_retain(q)                                    dispatch_retain(q)
-#   define gcd_release(q)                                   dispatch_release(q)
+#   define gcd_retain(...)                                  dispatch_retain(__VA_ARGS__)
+#   define gcd_release(...)                                 dispatch_release(__VA_ARGS__)
 
 #   if OS_OBJECT_USE_OBJC
 #       define gcd_strong                                   retain
@@ -66,7 +66,12 @@
 
 #endif
 
+#define gcd_releaseOnScopeExit(...) \
+        @onExit { gcd_release( (__VA_ARGS__) ); }
 
+#define gcd_retainUntilScopeExit(...) \
+        gcd_retain( (__VA_ARGS__) ); \
+        @onExit { gcd_release( (__VA_ARGS__) ); }
 
 /**
  * @name Dispatch queue helper functions
@@ -117,6 +122,13 @@ void GCDDispatchSafeSync( dispatch_queue_t queue, dispatch_block_t block ) __att
  * @warning The \c dispatch_queue_t passed to this function must have had \c GCDInitializeQueue called on it prior to this (or any other) BrynKit/GCDThreadsafe function.
  */
 void GCDDispatchSafeBarrierSync( dispatch_queue_t queue, dispatch_block_t block ) __attribute__((nonnull (1, 2)));
+
+
+// @@TODO: document these
+void *GCDQueueEnsureQueueHasUUID( dispatch_queue_t queue );
+void *GCDQueueGetUUID( dispatch_queue_t queue );
+void *GCDQueueGetCurrentQueueUUID();
+
 
 /** @/functiongroup */
 
