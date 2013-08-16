@@ -1,9 +1,6 @@
-# language: objective-c
-# xcode_workspace: Example/Example.xcworkspace
-# xcode_scheme: Example
+language: objective-c
 
-# language: objective-c
-# before_install:
-#     - brew update
-#     - brew install xctool
-# script: travis/script.sh
+before_script: travis/before_script.sh
+script: travis/script.sh
+
+
