@@ -15,6 +15,9 @@ profile
 # sublimetext
 *.sublime-workspace
 
+# cocoapods
+Pods/*
+
 .DS_Store
 
 # commenting out the ignorification of workspaces so that travis-ci can build + test
