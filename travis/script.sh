@@ -1,14 +1,16 @@
 #!/bin/sh
 set -e
 
-WORKSPACE_FILENAME=./GCDThreadsafe.xcworkspace
-SCHEME_NAME=GCDThreadsafe
+echo "===========> Doing 'clean' command"
+xctool -sdk iphonesimulator clean
 
-echo "===========> Doing 'build test' command (no -sdk flag)"
-xctool -workspace "$WORKSPACE_FILENAME" -scheme "$SCHEME_NAME" build test
+echo "===========> Doing 'build' command"
+xctool -sdk iphonesimulator build
 
-#echo "===========> Doing 'run-tests' command (no -sdk flag)"
-#xctool -workspace "$WORKSPACE_FILENAME" -scheme "$SCHEME_NAME" run-tests
+echo "===========> Doing 'build-tests' command"
+xctool build-tests
 
-#xctool -workspace ./GCDThreadsafe.xcworkspace -scheme GCDThreadsafe -sdk  build test
+echo "===========> Doing 'run-tests' command"
+xctool run-tests -test-sdk iphonesimulator -freshInstall -freshSimulator
+
 

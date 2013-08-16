@@ -1,5 +1,9 @@
-language: objective-c
-before_install:
-    - brew update
-    - brew install xctool
-script: xctool -workspace GCDThreadsafe.xcworkspace -scheme 'GCDThreadsafe' test
+# language: objective-c
+# xcode_workspace: Example/Example.xcworkspace
+# xcode_scheme: Example
+
+# language: objective-c
+# before_install:
+#     - brew update
+#     - brew install xctool
+# script: travis/script.sh
