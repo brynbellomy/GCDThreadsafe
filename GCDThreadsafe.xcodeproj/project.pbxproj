@@ -185,8 +185,8 @@
 				C513BCBB17B787B100646933 /* Sources */,
 				C513BCBC17B787B100646933 /* Frameworks */,
 				C513BCBD17B787B100646933 /* Resources */,
-				C513BCBE17B787B100646933 /* ShellScript */,
 				411A92754C7B4CA3A7FF1174 /* Copy Pods Resources */,
+				C513BCBE17B787B100646933 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -355,11 +355,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					x86_64,
-					i386,
-				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -383,7 +378,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s x86_64 i386";
 			};
 			name = Debug;
 		};
@@ -391,11 +385,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					x86_64,
-					i386,
-				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -412,7 +401,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 armv7s x86_64 i386";
 			};
 			name = Release;
 		};
